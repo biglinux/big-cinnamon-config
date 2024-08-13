@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Adiciona startcinnamon-biglinux na sessão do Cinnamon
+if [ "$(grep startcinnamon-biglinux /usr/bin/cinnamon-session)" = "" ]; then
+    sed -i '/cinnamon-session-binary/i . /usr/bin/startcinnamon-biglinux' /usr/bin/cinnamon-session
+fi
